@@ -8,6 +8,7 @@ import Login from "./compoments/login";
 import PersonalInfo from "./compoments/PersonalInfo";
 import VotePage from "./compoments/VotePage";
 import VotingPanel from "./compoments/VotingPanel";
+import Panel from "./compoments/panel";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -19,7 +20,8 @@ root.render(
     {/* <Login /> */}
     {/* <PersonalInfo /> */}
     {/* <VotePage /> */}
-    <VotingPanel />
+    {/* <VotingPanel /> */}
+    <Panel />
   </React.StrictMode>
 );
 

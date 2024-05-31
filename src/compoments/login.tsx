@@ -5,7 +5,7 @@ import { Button, Checkbox, Label, TextInput } from "flowbite-react";
 
 function login() {
   return (
-    <div className="flex bg-[#001124] w-full h-full">
+    <div className="flex bg-[#001124] w-full h-screen">
       <div>
         <img src={Login_Img} className=" md:m-48" />
       </div>
