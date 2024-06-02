@@ -1,57 +1,69 @@
 import React, { useState } from "react";
 import IMG_1 from "../Assets/Image/Vintage Glasses.svg";
+import AAP from "../Assets/Image/broom.svg";
+import BSP from "../Assets/Image/Elephant.svg";
+import BJP from "../Assets/Image/Lotus.svg";
+import CONGRESS from "../Assets/Image/Figure.svg";
+// import NPP from "../Assets/Image"
+import { useNavigate } from "react-router-dom";
 function Panel() {
   const data = [
     {
       id: 1,
-      name: "hiij",
+      name: "Aam Aadmi Party",
+      img:  AAP ,
     },
     {
       id: 2,
-      name: "tygugugbh",
+      name: "Bahujan Samaj Party",
+      img: BSP,
     },
     {
       id: 3,
-      name: "stffvsygb",
+      name: "Bharatiya Janata Party",
+      img: BJP,
     },
     {
       id: 4,
-      name: "stffvsygb",
+      name: "Indian National Congress",
+      img: CONGRESS,
     },
     {
       id: 5,
-      name: "stffvsygb",
+      name: "National People's Party",
+      img: IMG_1,
     },
   ];
+  const navigate = useNavigate();
   const [isActive, setisActive] = useState(0);
   const handleClick = (index: number) => {
     setisActive(index);
   };
+  const handleSubmit = () => {
+    navigate("/", { replace: true });
+  };
   return (
     <div className=" w-screen h-screen bg-[#001124]">
-      <div  className="flex justify-center">
+      <div className="flex justify-center">
         <div>
           <p className=" text-white font-bold py-10 text-3xl">Voting Panel</p>
         </div>
       </div>
       {data.map((item, index) => (
         <div className=" items-center flex flex-col">
-          <div 
-                onClick={() => handleClick(index)}
-          
-          className="flex flex-row w-[45rem] items-center px-10 border-2 bg-[#8B8B8B] rounded-3xl mt-10">
+          <div
+            onClick={() => handleClick(index)}
+            className="flex flex-row w-[45rem] items-center px-10 border-2 bg-[#8B8B8B] rounded-3xl mt-10"
+          >
             <div className="basis-1/4">
-              <input
-                checked={isActive === index}
-                type="radio"
-              />
+              <input checked={isActive === index} type="radio" />
             </div>
             <div className="basis-1/2 text-white font-semibold text-xl">
               {item.name}
             </div>
             <div className="basis-1/4 text-white">Independent</div>
             <div className="basis-1/4">
-              <img className=" w-14 h-14" src={IMG_1} />
+              <img className=" w-14 h-14" src={item.img} alt="LOGO" />
             </div>
           </div>
           {isActive === index ? (
@@ -73,7 +85,11 @@ function Panel() {
           </p>
         </div>
         <div>
-          <button className=" bg-[#015FC7] px-14 py-3 rounded-2xl text-white">
+          <button
+            type="submit"
+            onClick={handleSubmit}
+            className=" bg-[#015FC7] px-14 py-3 rounded-2xl text-white"
+          >
             Submit
           </button>
         </div>

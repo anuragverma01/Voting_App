@@ -6,7 +6,7 @@ function PersonalInfo() {
   return (
     <>
       <HeaderTwo />
-      <div className="md:flex md:px-48 bg-[#001124] md:h-screen py-32">
+      <div className="md:flex md:px-48 bg-[#001124] h-screen py-32">
         <div className=" m-24">
           <img src={Personal_Img} />
         </div>
@@ -29,7 +29,7 @@ function PersonalInfo() {
             </div>
             <div>
               <p className=" font-medium text-lg text-[#015FC7]">Mobile</p>
-              <p className="text-white text-xl font-bold">9650912628</p>
+              <p className="text-white text-xl font-bold">9651262882</p>
             </div>
           </div>
           <div>

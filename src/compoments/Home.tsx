@@ -2,12 +2,20 @@ import React from "react";
 import { Header } from "./Header";
 import Image from "../Assets/Image/unsplash_LA1VawaCjjI.svg";
 import { Button } from "flowbite-react";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
+  const navigate = useNavigate();
+  const handleRegister = () => {
+    navigate("/Registration");
+  };
+  const handleLogin = () => {
+    navigate("/Login");
+  };
   return (
     <>
       <Header />
-      <div className=" w-screen h-screen flex bg-black ">
+      <div className=" w-screen h-full flex bg-black ">
         <div>
           <img className=" md:h-[60rem] md:w-[60rem]" src={Image} />
         </div>
@@ -23,8 +31,18 @@ function Home() {
             </span>
           </div>
           <div className="flex md:space-x-6 ">
-            <Button className="bg-[#015FC7] md:px-10 md:py-2">REGISTER</Button>
-            <Button className="bg-[#015FC7] md:px-10 md:py-2">READ MORE</Button>
+            <Button
+              onClick={handleRegister}
+              className="bg-[#015FC7] md:px-10 md:py-2"
+            >
+              REGISTER
+            </Button>
+            <Button
+              onClick={handleLogin}
+              className="bg-[#015FC7] md:px-10 md:py-2"
+            >
+              LOGIN
+            </Button>
           </div>
         </div>
       </div>
